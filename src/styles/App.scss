@@ -1,0 +1,12 @@
+.App {
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.view-container {
+    width: 100%;
+    height: 92%;
+    padding: 5px;
+    overflow: scroll;
+}
