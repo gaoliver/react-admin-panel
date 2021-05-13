@@ -6,14 +6,21 @@ import UserBar from "./components/UserBar";
 import { Dashboard, TestView } from "./views";
 
 function App() {
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+
+    if (sidebar?.classList.contains("active")) {
+      sidebar?.classList.remove("active");
+    } else {
+      sidebar?.classList.add("active");
+    }
+  }
   return (
     <div className="App">
       <Router>
-        <div className="col-3 active" id="sidebar">
-          <Sidebar />
-        </div>
+        <Sidebar />
         <div className="col">
-          <UserBar />
+          <UserBar onClick={() => toggleSidebar()} />
           <div className="view-container">
             <Switch>
               <Route exact path="/">
