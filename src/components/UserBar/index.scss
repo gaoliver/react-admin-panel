@@ -18,6 +18,10 @@
     transition: all 1s ease;
 }
 
+.menu_responsive:hover {
+    cursor: pointer;
+}
+
 .menu_responsive>span::after {
     content: "";
     position: absolute;

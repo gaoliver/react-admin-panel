@@ -1,11 +1,12 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import "./styles/App.scss";
 import Sidebar from "./components/Sidebar";
 import UserBar from "./components/UserBar";
-import { Dashboard, TestView } from "./views";
+import Navigation from "./_navigation";
 
 function App() {
+  // Menu button toggle function
   function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
 
@@ -15,21 +16,21 @@ function App() {
       sidebar?.classList.add("active");
     }
   }
+
+  // To close the sidebar if at a smaller screen
+  function closeSidebar() {
+    if (window.screen.width < 800) {
+      document.getElementById("menu")?.click();
+    }
+  }
   return (
     <div className="App">
       <Router>
-        <Sidebar />
+        <Sidebar onClick={() => closeSidebar()} />
         <div className="col">
           <UserBar onClick={() => toggleSidebar()} />
           <div className="view-container">
-            <Switch>
-              <Route exact path="/">
-                <Dashboard />
-              </Route>
-              <Route exact path="/test">
-                <TestView />
-              </Route>
-            </Switch>
+            <Navigation />
           </div>
         </div>
       </Router>

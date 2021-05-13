@@ -1,7 +1,6 @@
 .sidebar-container {
     width: 0;
     height: 100vh;
-    padding: 0;
     background-color: var(--gray-800);
     align-items: center;
     flex-direction: column;
@@ -12,12 +11,99 @@
         z-index: 9999;
         position: absolute;
     }
+    // App Title
+    #sidebar-title {
+        margin-top: 15px;
+    }
+    #sidebar-title>* {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #sidebar-title>svg {
+        color: var(--gray-100);
+        margin-top: 1px;
+        margin-right: 10px;
+    }
+    #sidebar-title>h4 {
+        color: var(--gray-100);
+        font-weight: 500;
+    }
+    // User welcome
+    #sidebar-user {
+        width: 100%;
+        padding: var(--sidebar-padding);
+        margin-top: 30px;
+    }
+    .user-photo {
+        width: 4rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #sidebar-user>div>svg {
+        color: var(--gray-100);
+    }
+    #sidebar-user>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #sidebar-user>div>p {
+        margin-bottom: 5px;
+    }
+    #sidebar-user>div>h5 {
+        margin-bottom: 0;
+        color: var(--gray-100);
+        font-weight: 500;
+    }
+    // Menu Options
+    .menu-options {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .menu-options>h5 {
+        color: var(--gray-100);
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        padding: var(--sidebar-padding);
+    }
+    .menu-options>ul {
+        width: 100%;
+        margin-top: 5px;
+        padding-left: 0;
+    }
+    .menu-options>ul>a {
+        width: 100%;
+        height: auto;
+        padding: var(--sidebar-padding);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 1rem;
+        list-style: none;
+        text-decoration: none;
+        color: var(--gray-100);
+        flex-direction: row;
+        display: flex;
+    }
+    .menu-options>ul>a:hover {
+        background-color: var(--gray-700);
+        cursor: pointer;
+    }
+    .menu-options>ul>a>svg {
+        margin-right: 15px;
+    }
+    .menu-options>ul>a>p {
+        margin-bottom: 0;
+    }
 }
 
 .active {
-    width: 30%;
-    padding: 5px;
+    width: 25%;
     @media (max-width: 800px) {
         width: 70%;
+    }
+    @media (min-width: 801px) and (max-width: 1185px) {
+        width: 30%;
     }
 }

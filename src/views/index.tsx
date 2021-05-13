@@ -1,9 +1,9 @@
 import "./style.scss"
 
 import Dashboard from "./Dashboard"
-import TestView from "./TestView"
+import Course from "./Course"
 
 export {
     Dashboard,
-    TestView
+    Course
 }
