@@ -1,15 +1,21 @@
 .sidebar-container {
-    width: 0;
+    width: 23%;
     height: 100vh;
     background-color: var(--gray-800);
     align-items: center;
     flex-direction: column;
     display: flex;
     transition: all 1s ease;
-    overflow: hidden;
+    margin-left: -23%;
     @media (max-width: 800px) {
+        width: 70%;
         z-index: 9999;
         position: absolute;
+        margin-left: -70%;
+    }
+    @media (min-width: 801px) and (max-width: 1185px) {
+        width: 30%;
+        margin-left: -30%;
     }
     // App Title
     #sidebar-title {
@@ -99,11 +105,7 @@
 }
 
 .active {
-    width: 25%;
-    @media (max-width: 800px) {
-        width: 70%;
-    }
-    @media (min-width: 801px) and (max-width: 1185px) {
-        width: 30%;
-    }
+    margin-left: 0;
+    @media (max-width: 800px) {}
+    @media (min-width: 801px) and (max-width: 1185px) {}
 }
