@@ -1,5 +1,5 @@
 .sidebar-container {
-    width: 23%;
+    width: 18%;
     height: 100vh;
     background-color: var(--gray-800);
     align-items: center;
@@ -14,7 +14,7 @@
         margin-left: -70%;
     }
     @media (min-width: 801px) and (max-width: 1185px) {
-        width: 30%;
+        width: 23%;
         margin-left: 0;
     }
     // App Title
@@ -108,11 +108,11 @@
 }
 
 .active {
-    margin-left: -23%;
+    margin-left: -18%;
     @media (max-width: 800px) {
         margin-left: 0;
     }
     @media (min-width: 801px) and (max-width: 1185px) {
-        margin-left: -30%;
+        margin-left: -23%;
     }
 }

@@ -55,7 +55,7 @@ function Sidebar() {
         <div className="user-photo">
           <IoPersonCircleOutline size="4rem" />
         </div>
-        <div className="col-9">
+        <div className="col-8">
           <p>Welcome,</p>
           <h5>User Name</h5>
         </div>
