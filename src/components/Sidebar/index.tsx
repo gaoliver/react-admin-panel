@@ -4,6 +4,7 @@ import {
   IoPersonCircleOutline,
   FaHome,
   BiBookContent,
+  FiUsers
 } from "react-icons/all";
 import { Link, useLocation } from "react-router-dom";
 
@@ -73,6 +74,11 @@ function Sidebar() {
           <Link to="/course" id="course">
             <BiBookContent />
             <p>Course</p>
+          </Link>
+          {/* Users */}
+          <Link to="/users" id="users">
+            <FiUsers />
+            <p>Users</p>
           </Link>
         </ul>
       </div>
