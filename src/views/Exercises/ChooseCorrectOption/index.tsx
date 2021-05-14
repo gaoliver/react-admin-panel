@@ -1,10 +1,12 @@
 import { Button } from "reactstrap";
+import { useHistory } from "react-router-dom";
 import "./index.scss";
 
 import Title from "../../../components/Title";
 import PageContent from "../../../components/PageContent";
 
 function ChooseCorrectOption() {
+  const history = useHistory();
   var countBox = 2;
 
   function addInput() {
@@ -61,6 +63,20 @@ function ChooseCorrectOption() {
 
     countBox += 1;
   }
+
+  function handleCancel() {
+    var cancel = window.confirm("Are you sure to cancel this task?");
+    if (cancel === true) {
+      goBack();
+    } else {
+      return;
+    }
+  }
+
+  function goBack() {
+    history.push("/course");
+  }
+
   return (
     <div className="view-content">
       {/* Title */}
@@ -78,7 +94,9 @@ function ChooseCorrectOption() {
           Add Sentence
         </Button>
         <Button color="success">Save</Button>
-        <Button color="danger">Cancel</Button>
+        <Button color="danger" onClick={() => handleCancel()}>
+          Cancel
+        </Button>
       </div>
       {/* Creating sentencesÎ */}
       <div className="row text-inputs" id="sentences">
