@@ -11,7 +11,7 @@
         width: 70%;
         z-index: 9999;
         position: absolute;
-        margin-left: 0;
+        margin-left: -70%;
     }
     @media (min-width: 801px) and (max-width: 1185px) {
         width: 30%;
@@ -107,7 +107,7 @@
 .active {
     margin-left: -23%;
     @media (max-width: 800px) {
-        margin-left: -70%;
+        margin-left: 0;
     }
     @media (min-width: 801px) and (max-width: 1185px) {
         margin-left: -30%;

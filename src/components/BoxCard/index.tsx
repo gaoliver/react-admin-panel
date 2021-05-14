@@ -10,7 +10,7 @@ function BoxCard({ title, children }: Props) {
     <div className="box_container">
       <h1>{title}</h1>
       <div className="content">{children}</div>
-      <input type="button" value="Button" />
+      <input type="button" value="Start" />
     </div>
   );
 }
