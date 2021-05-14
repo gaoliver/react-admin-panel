@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 
-import { Dashboard, Course } from "./views";
+import { Dashboard, Course, ChooseCorrectOption } from "./views";
 
 export default function _navigation() {
   return (
@@ -10,6 +10,9 @@ export default function _navigation() {
         </Route>
         <Route exact path="/course">
           <Course />
+        </Route>
+        <Route exact path="/course/choose-the-correct-option">
+          <ChooseCorrectOption />
         </Route>
       </Switch>
   );

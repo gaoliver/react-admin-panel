@@ -10,7 +10,7 @@ function Course() {
       {/* First line */}
       <div className="row boxes-line">
         {/* Box 1 */}
-        <BoxCard title="Choose the correct option">
+        <BoxCard title="Choose the correct option" link="/course/choose-the-correct-option">
           <p>
             You give the sentense with the options to complete it, and the
             student pick the correct one.

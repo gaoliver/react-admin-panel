@@ -1,16 +1,25 @@
+import { Link } from "react-router-dom";
 import "./index.scss";
 
 interface Props {
   title?: string;
   children?: React.ReactNode;
+  link?: string;
+  onClick?: () => void
 }
 
-function BoxCard({ title, children }: Props) {
+function BoxCard({ title, children, link, onClick }: Props) {
   return (
     <div className="box_container">
       <h1>{title}</h1>
       <div className="content">{children}</div>
-      <input type="button" value="Start" />
+      {link ? (
+        <Link to={link}>
+          <input type="button" value="Start" />
+        </Link>
+      ) : (
+        <input type="button" value="Start" onClick={onClick} />
+      )}
     </div>
   );
 }
