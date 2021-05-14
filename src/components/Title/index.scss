@@ -19,4 +19,14 @@
         margin-bottom: 0;
         margin-left: 10px;
     }
+    @media (max-width: 800px) {
+        display: block;
+        h1 {
+            width: 100%;
+        }
+        h3 {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
 }

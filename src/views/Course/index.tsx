@@ -12,7 +12,7 @@ function Course() {
         {/* Box 1 */}
         <BoxCard title="Choose the correct option" link="/course/choose-the-correct-option">
           <p>
-            You give the sentense with the options to complete it, and the
+            You give the sentence with the options to complete it, and the
             student pick the correct one.
           </p>
           <span>e.g.: yes, I [am] / [are]</span>
@@ -20,7 +20,7 @@ function Course() {
         {/* Box 2 */}
         <BoxCard title="Complete with the words in brackets">
           <p>
-            The student uses the word given in brackets to complete the sentense
+            The student uses the word given in brackets to complete the sentence
             with the correct verb flex.
           </p>
           <span>e.g.: yes, I _____ (to be)</span>
