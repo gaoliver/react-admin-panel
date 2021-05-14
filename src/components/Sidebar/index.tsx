@@ -1,18 +1,48 @@
-import "./index.scss";
-
+import { useEffect, useState } from "react";
 import {
   CgScreen,
   IoPersonCircleOutline,
   FaHome,
   BiBookContent,
 } from "react-icons/all";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-interface Props {
-    onClick: () => void
-}
+import "./index.scss";
 
-function Sidebar({ onClick } : Props) {
+function Sidebar() {
+  // To close the sidebar if at a smaller screen
+  function closeSidebar() {
+    if (window.screen.width < 800) {
+      document.getElementById("menu")?.click();
+    } else {
+      setActivePage();
+    }
+  }
+
+  useEffect(() => {
+    setActivePage();
+  });
+
+  // Active page effect
+  var location = useLocation().pathname.replace("/", "");
+  const [prevPage, setPrevPage] = useState("");
+
+  function setActivePage() {
+    if (location === "") {
+      document.getElementById(prevPage)?.classList.remove("active-page");
+      document.getElementById("home")?.classList.add("active-page");
+      setPrevPage("");
+    } else if (prevPage !== "") {
+      document.getElementById(prevPage)?.classList.remove("active-page");
+      document.getElementById(location)?.classList.add("active-page");
+      setPrevPage(location);
+    } else {
+      document.getElementById("home")?.classList.remove("active-page");
+      document.getElementById(location)?.classList.add("active-page");
+      setPrevPage(location);
+    }
+  }
+
   return (
     <div className="sidebar-container" id="sidebar">
       {/* App title */}
@@ -33,14 +63,14 @@ function Sidebar({ onClick } : Props) {
       {/* Menu Options */}
       <div className="menu-options">
         <h5>General</h5>
-        <ul onClick={onClick}>
+        <ul onClick={() => closeSidebar()}>
           {/* Home */}
-          <Link to="/">
+          <Link to="/" id="home">
             <FaHome />
             <p>Home</p>
           </Link>
           {/* Teste */}
-          <Link to="/course">
+          <Link to="/course" id="course">
             <BiBookContent />
             <p>Course</p>
           </Link>

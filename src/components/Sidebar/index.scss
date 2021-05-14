@@ -102,6 +102,9 @@
     .menu-options>ul>a>p {
         margin-bottom: 0;
     }
+    .active-page {
+        background-color: var(--gray-700);
+    }
 }
 
 .active {

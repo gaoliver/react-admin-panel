@@ -17,16 +17,10 @@ function App() {
     }
   }
 
-  // To close the sidebar if at a smaller screen
-  function closeSidebar() {
-    if (window.screen.width < 800) {
-      document.getElementById("menu")?.click();
-    }
-  }
   return (
     <div className="App">
       <Router>
-        <Sidebar onClick={() => closeSidebar()} />
+        <Sidebar />
         <div className="col">
           <UserBar onClick={() => toggleSidebar()} />
           <div className="view-container">
