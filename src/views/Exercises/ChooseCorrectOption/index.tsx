@@ -56,7 +56,7 @@ function ChooseCorrectOption() {
     let inputArea = document.getElementById("sentences");
 
     if (inputArea) {
-      inputArea.innerHTML += newInput;
+      inputArea.insertAdjacentHTML("beforeend", newInput);
     }
 
     countBox += 1;
