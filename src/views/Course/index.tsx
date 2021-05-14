@@ -1,3 +1,5 @@
+import "./index.scss";
+
 import BoxCard from "../../components/BoxCard";
 import Title from "../../components/Title";
 
@@ -5,13 +7,25 @@ function Course() {
   return (
     <div className="view-content">
       <Title title="Create New Exercise" subtitle="Choose the exercise type" />
-      <BoxCard title="Choose the correct option">
-        <p>
-          You give the sentense with the options to complete it, and the student
-          pick the correct one.
-        </p>
-        <p>e.g.: yes, I [am]/[are]</p>
-      </BoxCard>
+      {/* First line */}
+      <div className="boxes-line">
+        {/* Box 1 */}
+        <BoxCard title="Choose the correct option">
+          <p>
+            You give the sentense with the options to complete it, and the
+            student pick the correct one.
+          </p>
+          <span>e.g.: yes, I [am] / [are]</span>
+        </BoxCard>
+        {/* Box 2 */}
+        <BoxCard title="Complete with the words in brackets">
+          <p>
+            The student uses the word given in brackets to complete the sentense
+            with the correct verb flex.
+          </p>
+          <span>e.g.: yes, I _____ (to be)</span>
+        </BoxCard>
+      </div>
     </div>
   );
 }
