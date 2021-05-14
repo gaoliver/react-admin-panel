@@ -1,0 +1,14 @@
+.footer {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border-top: 1px solid #4442;
+    p {
+        float: right;
+        color: var(--grey-200);
+        height: fit-content;
+        margin-bottom: 0;
+    }
+}

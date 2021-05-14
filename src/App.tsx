@@ -4,6 +4,7 @@ import "./styles/App.scss";
 import Sidebar from "./components/Sidebar";
 import UserBar from "./components/UserBar";
 import Navigation from "./_navigation";
+import Footer from "./components/Footer";
 
 function App() {
   // Menu button toggle function
@@ -25,6 +26,7 @@ function App() {
           <UserBar onClick={() => toggleSidebar()} />
           <div className="view-container">
             <Navigation />
+            <Footer />
           </div>
         </div>
       </Router>
