@@ -1,11 +1,11 @@
-import "./index.scss"
+import "./index.scss";
 
 function Dashboard() {
-    return (
-        <div className="view-content">
-            This is the Dashboard View
-        </div>
-    )
+  return (
+    <div className="view-content">
+        Dashboard
+    </div>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
