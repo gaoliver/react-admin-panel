@@ -8,7 +8,9 @@ import PageContent from "../../../components/PageContent";
 function ChooseCorrectOption() {
   const history = useHistory();
   var countBox = 2;
+  const inputArea = document.getElementById("sentences");
 
+  // Add a new input
   function addInput() {
     let newInput = `
       <div class="box-container">
@@ -55,8 +57,6 @@ function ChooseCorrectOption() {
       </div>
     `;
 
-    let inputArea = document.getElementById("sentences");
-
     if (inputArea) {
       inputArea.insertAdjacentHTML("beforeend", newInput);
     }
@@ -64,6 +64,7 @@ function ChooseCorrectOption() {
     countBox += 1;
   }
 
+  // Cancel button
   function handleCancel() {
     var cancel = window.confirm("Are you sure to cancel this task?");
     if (cancel === true) {
@@ -73,9 +74,17 @@ function ChooseCorrectOption() {
     }
   }
 
+  // Go back to the previous page
   function goBack() {
     history.push("/course");
   }
+
+  // Message for fake button
+  const fakeButton = () => {
+    alert(
+      "This is only illustrative button. There's still not a functionallity for that. Front-end work, no database for this project yet."
+    );
+  };
 
   return (
     <div className="view-content">
@@ -93,7 +102,9 @@ function ChooseCorrectOption() {
         <Button color="primary" onClick={() => addInput()}>
           Add Sentence
         </Button>
-        <Button color="success">Save</Button>
+        <Button color="success" onClick={fakeButton}>
+          Save
+        </Button>
         <Button color="danger" onClick={() => handleCancel()}>
           Cancel
         </Button>

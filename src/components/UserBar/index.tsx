@@ -12,18 +12,25 @@ function UserBar({ onClick }: Props) {
   var number = 3;
 
   // Dropdown menu
-  const [active, setActive] = useState(false)
-  const dropdownList = document.getElementById("dropdown-list")
+  const [active, setActive] = useState(false);
+  const dropdownList = document.getElementById("dropdown-list");
 
   const toggleDropdown = () => {
     if (!active) {
-      dropdownList?.classList.add("active-dropdown")
-      setActive(true)
+      dropdownList?.classList.add("active-dropdown");
+      setActive(true);
     } else {
-      dropdownList?.classList.remove("active-dropdown")
-      setActive(false)
+      dropdownList?.classList.remove("active-dropdown");
+      setActive(false);
     }
-  }
+  };
+
+  // Message for fake button
+  const fakeButton = () => {
+    alert(
+      "This is only illustrative button. There's still not a functionallity for that. Front-end work, no database for this project yet."
+    );
+  };
 
   return (
     <div className="bar-container">
@@ -39,7 +46,7 @@ function UserBar({ onClick }: Props) {
       </label>
       <div className="header-options">
         {/* Messages */}
-        <div className="messages">
+        <div className="messages" onClick={fakeButton}>
           {number !== 0 ? (
             <div className="unread">{number.toString()}</div>
           ) : null}
@@ -50,7 +57,11 @@ function UserBar({ onClick }: Props) {
           <IoPersonCircleOutline size="2rem" />
           {/* Person's name */}
           <div className="dropdown">
-            <button className="header-name dropdown-toggle" type="button" onClick={toggleDropdown}>
+            <button
+              className="header-name dropdown-toggle"
+              type="button"
+              onClick={toggleDropdown}
+            >
               User Name
             </button>
             <ul id="dropdown-list" className="">

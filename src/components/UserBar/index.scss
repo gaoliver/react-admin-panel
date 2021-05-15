@@ -75,6 +75,7 @@
         &:hover {
             background-color: var(--white);
             transition: all 0.5s ease;
+            cursor: pointer;
         }
         &:active {
             background-color: var(--gray-300);
