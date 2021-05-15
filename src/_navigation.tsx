@@ -13,6 +13,7 @@ export default function _navigation() {
       <Route exact path="/">
         <Dashboard />
       </Route>
+      <Redirect exact from="/login" to="/" />
       {/* Course page */}
       <Route exact path="/course">
         <Course />
