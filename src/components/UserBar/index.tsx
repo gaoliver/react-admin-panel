@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { HiOutlineMail, IoPersonCircleOutline } from "react-icons/all";
+import { useDispatch, useSelector } from "react-redux";
+import * as action from "../../store/actions";
 
 import "./index.scss";
 
@@ -7,7 +9,17 @@ interface Props {
   onClick: () => void;
 }
 
+interface RootState {
+  userData: {
+    name: string;
+    surname: string;
+  };
+}
+
 function UserBar({ onClick }: Props) {
+  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.userData);
+
   // Unread messages
   var number = 3;
 
@@ -30,6 +42,13 @@ function UserBar({ onClick }: Props) {
     alert(
       "This is only illustrative button. There's still not a functionallity for that. Front-end work, no database for this project yet."
     );
+  };
+
+  // Logout function
+  const handleLogout = () => {
+    localStorage.clear();
+    dispatch(action.userLogout());
+    return window.location.reload();
   };
 
   return (
@@ -62,10 +81,12 @@ function UserBar({ onClick }: Props) {
               type="button"
               onClick={toggleDropdown}
             >
-              User Name
+              {user?.name} {user?.surname}
             </button>
             <ul id="dropdown-list" className="">
-              <li id="logout">Logout</li>
+              <li id="logout" onClick={handleLogout}>
+                Logout
+              </li>
             </ul>
           </div>
         </div>

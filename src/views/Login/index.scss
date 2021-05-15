@@ -1,0 +1,52 @@
+.login-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-500);
+    .login-box {
+        width: 30%;
+        height: fit-content;
+        padding: 60px;
+        background-color: var(--gray-800);
+        border-radius: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: 800px) {
+            width: fit-content;
+        }
+        // App Title
+        #sidebar-title>* {
+            width: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        #sidebar-title>svg {
+            color: var(--gray-100);
+            margin-top: 1px;
+            margin-right: 10px;
+        }
+        #sidebar-title>h4 {
+            color: var(--gray-100);
+            font-weight: 500;
+        }
+        .form-login {
+            width: 100%;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            div {
+                width: 100%;
+            }
+            button {
+                width: 100%;
+                margin-top: 10px;
+            }
+            &>div>.wrong {
+                margin-top: 5px;
+            }
+        }
+    }
+}

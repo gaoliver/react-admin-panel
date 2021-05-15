@@ -4,13 +4,17 @@ import {
   IoPersonCircleOutline,
   FaHome,
   BiBookContent,
-  FiUsers
+  FiUsers,
 } from "react-icons/all";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import "./index.scss";
+import { User } from "../../constants/interfaces";
 
 function Sidebar() {
+  const user = useSelector((state: User) => state.userData);
+
   // To close the sidebar if at a smaller screen
   function closeSidebar() {
     if (window.screen.width < 800) {
@@ -58,7 +62,9 @@ function Sidebar() {
         </div>
         <div className="col-8">
           <p>Welcome,</p>
-          <h5>User Name</h5>
+          <h5>
+            {user?.name} {user?.surname}
+          </h5>
         </div>
       </div>
       {/* Menu Options */}
@@ -68,7 +74,7 @@ function Sidebar() {
           {/* Home */}
           <Link to="/" id="home">
             <FaHome />
-            <p>Home</p>
+            <p>Dashboard</p>
           </Link>
           {/* Teste */}
           <Link to="/course" id="course">
