@@ -8,7 +8,6 @@ import PageContent from "../../../components/PageContent";
 function ChooseCorrectOption() {
   const history = useHistory();
   var countBox = 2;
-  const inputArea = document.getElementById("sentences");
 
   // Add a new input
   const addInput = () => {
@@ -56,6 +55,8 @@ function ChooseCorrectOption() {
         </div>
       </div>
     `;
+
+    let inputArea = document.getElementById("sentences");
 
     if (inputArea) {
       inputArea.insertAdjacentHTML("beforeend", newInput);
