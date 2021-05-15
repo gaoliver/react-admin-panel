@@ -11,7 +11,7 @@ function ChooseCorrectOption() {
   const inputArea = document.getElementById("sentences");
 
   // Add a new input
-  function addInput() {
+  const addInput = () => {
     let newInput = `
       <div class="box-container">
         <h1>Sentence ${countBox.toString()}</h1>
@@ -99,7 +99,7 @@ function ChooseCorrectOption() {
       </PageContent>
       {/* Save && Add Sentence && Cancel */}
       <div className="buttons">
-        <Button color="primary" onClick={() => addInput()}>
+        <Button color="primary" onClick={addInput}>
           Add Sentence
         </Button>
         <Button color="success" onClick={fakeButton}>

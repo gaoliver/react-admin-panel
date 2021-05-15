@@ -10,7 +10,6 @@ function Dashboard() {
         <h3>{user.name} {user.surname}</h3>
         <h5>{user.email}</h5>
         <h5>{user.type}</h5>
-        <h5>{user.state}</h5>
     </div>
   );
 }
