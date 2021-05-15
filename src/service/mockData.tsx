@@ -8,7 +8,7 @@ const users = [
         name: "Mark",
         surname: "Otto",
         email: "markotto@site.com",
-        password: "",
+        password: "123",
         type: "student",
         state: "waiting"
     },
@@ -17,7 +17,7 @@ const users = [
         name: "Jacob",
         surname: "Thornton",
         email: "jacobthornton@site.com",
-        password: "",
+        password: "123",
         type: "admin",
         state: "approved"
     },
@@ -26,8 +26,17 @@ const users = [
         name: "Larry",
         surname: "the Bird",
         email: "larry_thebird@site.com",
-        password: "",
+        password: "123",
         type: "professor",
         state: "waiting"
+    },
+    {
+        id: 4,
+        name: "Gabriel",
+        surname: "Ramos",
+        email: "test@site.com",
+        password: "123",
+        type: "admin",
+        state: "approved"
     }
 ]
