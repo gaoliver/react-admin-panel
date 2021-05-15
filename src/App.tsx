@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as action from "./store/actions";
@@ -53,20 +53,25 @@ function App() {
 
   return (
     <div className="App">
-      {isLogged ? (
-        <Router>
-          <Sidebar />
-          <div className="col">
-            <UserBar onClick={() => toggleSidebar()} />
-            <div className="view-container">
-              <Navigation />
-              <Footer />
+      <Router>
+        {isLogged ? (
+          <>
+            <Sidebar />
+            <div className="col">
+              <UserBar onClick={() => toggleSidebar()} />
+              <div className="view-container">
+                <Navigation />
+                <Footer />
+              </div>
             </div>
-          </div>
-        </Router>
-      ) : (
-        <Login />
-      )}
+          </>
+        ) : (
+          <>
+            <Route exact path="/login" component={Login} />
+            <Redirect exact to="/login" />
+          </>
+        )}
+      </Router>
     </div>
   );
 }
