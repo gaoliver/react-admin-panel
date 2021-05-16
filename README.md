@@ -12,7 +12,7 @@ Open the terminal into the folder you want to clone this project in, and run:
 <br />
 
 ## Running the project
-Now you just have to type **cd react-admin-panel**, and tap *Return* to get into the project folder, then run:
+Now you just have to type **cd react-admin-panel**, then tap the *Return* button to get into the project folder, then run:
 
 ### `yarn play`
 
